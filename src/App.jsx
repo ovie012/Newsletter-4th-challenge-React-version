@@ -37,56 +37,56 @@ function App() {
     <>
       <div className="App">
         {!submitted ? (
-        <div className='container'>
-            <div className="texts">
-              <h1>Stay updated!</h1>
-              <p>Join 60,000+ product managers receiving monthly updates on:</p>
-              <ul>
-                <li>Product discovery and building what matters</li>
-                <li>Measuring to ensure updates are a success</li>
-                <li>And much more!</li>
-              </ul>
-              <form className={`form ${error ? 'active' : ''}`}>
-                <h1>Email address</h1>
-                {error && <h6 className='error'>{errorText}</h6>}
-                <input 
-                  ref={emailRef} 
-                  // onChange={(e) => setEmail(e.target.value)}
-                  // value={email}
-                  className='input' 
-                  placeholder='email@company.com' 
-                />
-                <button 
-                  onClick={handleSubmit} 
-                  type='button' 
-                  className='submit'
-                >
-                  Subscribe to monthly newsletter
-                </button>
-              </form>
-            </div>
-            <div className='image'>
-              <img className="desktop" src="/illustration-sign-up-desktop.svg" alt='banner' />
-              <img className="mobile" src="/illustration-sign-up-mobile.svg" alt="banner" />
-            </div>
-        </div>
-        ) : (
-        <div className='container-2'>
-          <div className='box'>
-            <img src="/icon-success.svg" alt='success' />
-            <h1>Thanks for subscribing!</h1>
-            <p>A confirmation email has been sent to&nbsp; <span className='drop'>{emailApplied}</span>. 
-            Please open it and click the button inside to confirm your subscription.</p>
-            <button 
-              onClick={handleDismiss} 
-              type='button' 
-              className='dismiss'
-            >
-              Dismiss message
-            </button>
+          <div className='container'>
+              <div className="texts">
+                <h1>Stay updated!</h1>
+                <p>Join 60,000+ product managers receiving monthly updates on:</p>
+                <ul>
+                  <li>Product discovery and building what matters</li>
+                  <li>Measuring to ensure updates are a success</li>
+                  <li>And much more!</li>
+                </ul>
+                <form className={`form ${error ? 'active' : ''}`}>
+                  <h1>Email address</h1>
+                  {error && <h6 className='error'>{errorText}</h6>}
+                  <input 
+                    ref={emailRef} 
+                    // onChange={(e) => setEmail(e.target.value)}
+                    // value={email}
+                    className='input' 
+                    placeholder='email@company.com' 
+                  />
+                  <button 
+                    onClick={handleSubmit} 
+                    type='button' 
+                    className='submit'
+                  >
+                    Subscribe to monthly newsletter
+                  </button>
+                </form>
+              </div>
+              <div className='image'>
+                <img className="desktop" src="/illustration-sign-up-desktop.svg" alt='banner' />
+                <img className="mobile" src="/illustration-sign-up-mobile.svg" alt="banner" />
+              </div>
           </div>
-        </div> 
-        )}
+        ) : (
+          <div className='container-2'>
+            <div className='box'>
+              <img src="/icon-success.svg" alt='success' />
+              <h1>Thanks for subscribing!</h1>
+              <p>A confirmation email has been sent to&nbsp; <span className='drop'>{emailApplied}</span>. 
+              Please open it and click the button inside to confirm your subscription.</p>
+              <button 
+                onClick={handleDismiss} 
+                type='button' 
+                className='dismiss'
+              >
+                Dismiss message
+              </button>
+            </div>
+          </div> 
+        )};
       </div>
     </>
   );
