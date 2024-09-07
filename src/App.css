@@ -1,0 +1,320 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsl(234, 29%, 20%);
+}
+
+.container {
+  width: 45%;
+  height: 63%;
+  display: flex;
+  justify-content: space-between;
+  background: hsl(0, 0%, 100%);
+  border-radius: 20px;
+}
+
+.texts {
+  width: 45%;
+  height: 75%;
+  margin: auto;
+}
+
+.texts h1 {
+  font-size: 1.9rem;
+  /* text-align: center; */
+  color: hsl(235, 18%, 26%);
+}
+
+.texts p {
+  font-size: 0.55rem;
+  color: hsl(235, 18%, 26%);
+  margin-top: 4.5%;
+  font-weight: 600;
+}
+
+.texts ul {
+  margin-left: 5.5%;
+  margin-top: 6.5%;
+  color: hsl(235, 18%, 26%);
+}
+
+.texts ul li {
+  font-size: 0.6rem;
+  font-weight: 600;
+  margin-bottom: 4%;
+  /* list-style: none; */
+  list-style-image: url(/icon-list.svg);
+}
+
+/* .texts ul li::before {
+  content: "";
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  background-image: url(./icon-list.svg);
+} */
+
+.texts form {
+  width: 100%;
+  margin-top: 10%;
+  position: relative;
+}
+
+.texts form h1 {
+  font-size: 0.5rem;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 2%;
+}
+
+.texts form input {
+  width: 90%;
+  height: 30px;
+  border: 1px solid hsl(231, 7%, 60%);
+  border-radius: 5px;
+  padding-left: 5%;
+  padding-right: 10%;
+  font-size: 0.6rem;
+  margin-bottom: 5%;
+}
+
+.texts form input:focus {
+  outline: 1px solid hsl(231, 7%, 60%);
+}
+
+.texts form button {
+  font-size: 0.6rem;
+  width: 90%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  background: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  /* transition: background 0.3s ease-in-out; */
+}
+
+.texts form button:hover {
+  background: linear-gradient(90deg,hsl(339, 90%, 60%), hsl(4, 100%, 67%));
+}
+
+.error {
+  /* display: none; */
+  position: absolute;
+  font-size: 0.5rem;
+  top: 0%;
+  right: 10%;
+  color: hsl(4, 100%, 67%);
+}
+
+.image {
+  width: 40%;
+  height: 100%;
+  margin-right: 2%;
+}
+
+.image img.desktop {
+  width: 100%;
+  height: 100%;
+}
+
+.mobile {
+  display: none;
+}
+
+/* active style */
+
+.disable {
+  display: none;
+}
+
+.active, .active.container-2 {
+  display: block;
+}
+
+.active input:focus,
+.active input:valid,
+.active input {
+  border: 1px solid hsl(4, 100%, 67%);
+  color: hsl(4, 100%, 67%);
+  background: hsla(4, 100%, 67%, 0.2);
+}
+
+.active .error {
+  display: block;
+}
+
+/* container 2 */
+.container-2 {
+  /* display: none; */
+  width: 25%;
+  height: 55%;
+  background: hsl(0, 0%, 100%);
+  border-radius: 20px;
+}
+
+.box {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+
+.box img {
+  width: 35px;
+  height: 35px;
+  margin-top: 15%;
+}
+
+.box h1 {
+  font-size: 2rem;
+  color: hsl(235, 18%, 26%);
+  line-height: 30px;
+  margin-top: 7%;
+}
+
+.box p {
+  font-size: 0.6rem;
+  color: hsl(235, 18%, 26%);
+  font-weight: 500;
+  margin-top: 7%;
+}
+
+.drop {
+  font-weight: 900;
+  color: hsl(234, 29%, 20%);
+}
+
+.box button {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  background: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  margin-top: 8%;
+  /* transition: background 0.3s ease-in-out; */
+}
+
+.box button:hover {
+  background: linear-gradient(90deg,hsl(339, 90%, 60%), hsl(4, 100%, 67%));
+}
+
+/* mobile responsive design */
+
+@media only screen and (max-width:500px) {
+  .App {
+    background: hsl(0, 0%, 100%);
+  }
+
+  .container {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .image {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 40%;
+  }
+
+  .mobile {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .texts {
+    width: 90%;
+    /* height: 80%; */
+    margin-top: 45%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: -15%;
+  }
+
+  .texts h1 {
+    font-size: 2.5rem;
+  }
+
+  .texts p {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .texts ul li {
+    font-size: 1rem;
+    font-weight: 500;
+    list-style-image: url(/icon-list-m.svg);
+  }
+
+  .texts form h1 {
+    font-size: 0.8rem;
+  }
+
+  .texts form input,
+  .texts form button {
+    width: 100%;
+    height: 55px;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-bottom: 7%;
+  }
+
+  /* success page */
+
+  .container-2 {
+    width: 100%;
+  }
+
+  .box {
+    width: 90%;
+    margin: auto;
+    height: 100%;
+  }
+
+  .box img {
+    margin-top: -10%;
+    margin-bottom: 5%;
+    width: 60px;
+    height: 60px;
+  }
+
+  .box h1 {
+    font-size: 2.5rem;
+    line-height: 42px;
+    margin-bottom: 10%;
+  }
+
+  .box p {
+    font-size: 1rem;
+    margin-bottom: 70%;
+  }
+
+  .box button {
+    width: 100%;
+    height: 55px;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+
+  .error {
+    font-size: 0.8rem;
+    right: 0;
+  }
+}
